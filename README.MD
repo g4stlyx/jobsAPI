@@ -1,52 +1,16 @@
+An API created with expressJS. It has register and login functionality. Jobs are private to the user who created them, once you logged in you can create, get, update, and delete jobs.
+
+<a href="https://jobs-api-qomp.onrender.com/">api link</a>
+<a href="https://jobs-api-qomp.onrender.com/api-docs/#/">docs</a>
+
 #### Setup
+
+If you want to use this API as a template, you have to create a .env file contains MONGO_URI(link for the mongo db), JWT_SECRET(your secret key while decoding JWT), JWT_LIFETIME(token lifetime) variables and values.
 
 ```bash
 npm install && npm start
 ```
 
-#### Database Connection
-
-1. Import connect.js
-2. Invoke in start()
-3. Setup .env in the root
-4. Add MONGO_URI with correct value
-
-#### Routers
-
-- auth.js
-- jobs.js
-
-#### User Model
-
-Email Validation Regex
-
-```regex
-/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-```
-
-#### Register User
-
-- Validate - name, email, password - with Mongoose
-- Hash Password (with bcryptjs)
-- Save User
-- Generate Token
-- Send Response with Token
-
-#### Login User
-
-- Validate - email, password - in controller
-- If email or password is missing, throw BadRequestError
-- Find User
-- Compare Passwords
-- If no user or password does not match, throw UnauthenticatedError
-- If correct, generate Token
-- Send Response with Token
-
-#### Mongoose Errors
-
-- Validation Errors
-- Duplicate (Email)
-- Cast Error
 
 #### Security
 
@@ -54,16 +18,3 @@ Email Validation Regex
 - cors
 - xss-clean
 - express-rate-limit
-
-Swagger UI
-
-```yaml
-/jobs/{id}:
-  parameters:
-    - in: path
-      name: id
-      schema:
-        type: string
-      required: true
-      description: the job id
-```
