@@ -1,6 +1,6 @@
 An API created with expressJS. It has register and login functionality. Jobs are private to the user who created them, once you logged in you can create, get, update, and delete jobs.
 
-<a href="https://jobs-api-qomp.onrender.com/">api link</a>
+<a href="https://jobs-api-qomp.onrender.com/">api link</a> <br/>  
 <a href="https://jobs-api-qomp.onrender.com/api-docs/#/">docs</a>
 
 #### Setup
